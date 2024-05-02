@@ -224,14 +224,9 @@ puts ""
 movies = Movie.all
 
 for i in movies
-    puts "#{i.title} #{i.year_released} #{i.rated} #{i.studio_id}"
+    studio = Studio.find_by(id: i.studio_id)  
+    puts "#{i.title} #{i.year_released} #{i.rated} #{studio["name"]}"
 end
-#for movie in movies
- #   movie_title = movie["title"]
-  
-    # display a string with the note
-  #  puts "- #{title}"
-  #end
 
 # Prints a header for the cast output
 puts ""
